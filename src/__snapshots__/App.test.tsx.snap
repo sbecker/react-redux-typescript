@@ -1,0 +1,16 @@
+exports[`test renders a snapshot 1`] = `
+<div
+  className="App">
+  <button
+    className="pt-button"
+    disabled={undefined}
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    type="button">
+    <span>
+      Show Overlay
+    </span>
+  </button>
+</div>
+`;

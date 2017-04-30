@@ -1,0 +1,456 @@
+@import url(../node_modules/@blueprintjs/core/dist/blueprint.css);
+/*
+Color aliases
+
+These variables are semantic aliases of our [colors](#colors). They are used throughout Blueprint
+itself to ensure consistent color usage across components.
+
+<table class=pt-table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-primary"></div></td>
+      <td><code>$pt-intent-primary</code></td>
+      <td>Primary intent color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-success"></div></td>
+      <td><code>$pt-intent-success</code></td>
+      <td>Success intent color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-warning"></div></td>
+      <td><code>$pt-intent-warning</code></td>
+      <td>Warning intent color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-danger"></div></td>
+      <td><code>$pt-intent-danger</code></td>
+      <td>Danger intent color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-app-background-color"></div></td>
+      <td><code>$pt-app-background-color</code></td>
+      <td>Application background color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-app-background-color"></div></td>
+      <td><code>$pt-dark-app-background-color</code></td>
+      <td>Dark theme application background color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-text-color"></div></td>
+      <td><code>$pt-text-color</code></td>
+      <td>Default text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-text-color-muted"></div></td>
+      <td><code>$pt-text-color-muted</code></td>
+      <td>Muted text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-text-color-disabled"></div></td>
+      <td><code>$pt-text-color-disabled</code></td>
+      <td>Disabled text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-heading-color"></div></td>
+      <td><code>$pt-heading-color</code></td>
+      <td>Text color for headers</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-link-color"></div></td>
+      <td><code>$pt-link-color</code></td>
+      <td>Text color for links</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-text-color"></div></td>
+      <td><code>$pt-dark-text-color</code></td>
+      <td>Dark theme default text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-text-color-muted"></div></td>
+      <td><code>$pt-dark-text-color-muted</code></td>
+      <td>Dark theme muted text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-text-color-disabled"></div></td>
+      <td><code>$pt-dark-text-color-disabled</code></td>
+      <td>Dark theme disabled text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-heading-color"></div></td>
+      <td><code>$pt-dark-heading-color</code></td>
+      <td>Dark theme text color for headers</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-link-color"></div></td>
+      <td><code>$pt-dark-link-color</code></td>
+      <td>Dark theme text color for links</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-text-selection-color"></div></td>
+      <td><code>$pt-text-selection-color</code></td>
+      <td>Text selection color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color"></div></td>
+      <td><code>$pt-icon-color</code></td>
+      <td>Default icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color-hover"></div></td>
+      <td><code>$pt-icon-color-hover</code></td>
+      <td>Hovered icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color-disabled"></div></td>
+      <td><code>$pt-icon-color-disabled</code></td>
+      <td>Disabled icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color-selected"></div></td>
+      <td><code>$pt-icon-color-selected</code></td>
+      <td>Selected icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color"></div></td>
+      <td><code>$pt-dark-icon-color</code></td>
+      <td>Dark theme default icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color-hover"></div></td>
+      <td><code>$pt-dark-icon-color-hover</code></td>
+      <td>Dark theme hovered icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color-disabled"></div></td>
+      <td><code>$pt-dark-icon-color-disabled</code></td>
+      <td>Dark theme disabled icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color-selected"></div></td>
+      <td><code>$pt-dark-icon-color-selected</code></td>
+      <td>Dark theme selected icon color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-divider-black"></div></td>
+      <td><code>$pt-divider-black</code></td>
+      <td>Black divider color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-divider-black"></div></td>
+      <td><code>$pt-dark-divider-black</code></td>
+      <td>Dark theme black divider color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-divider-white"></div></td>
+      <td><code>$pt-dark-divider-white</code></td>
+      <td>Dark theme white divider color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-code-text-color"></div></td>
+      <td><code>$pt-code-text-color</code></td>
+      <td>Code text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-code-background-color"></div></td>
+      <td><code>$pt-code-background-color</code></td>
+      <td>Code background color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-code-text-color"></div></td>
+      <td><code>$pt-dark-code-text-color</code></td>
+      <td>Dark theme code text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-code-background-color"></div></td>
+      <td><code>$pt-dark-code-background-color</code></td>
+      <td>Dark theme code background color</td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide variables.colors
+*/
+/*
+Color aliases
+
+These variables are semantic aliases of our [colors](#colors). They are used throughout Blueprint
+itself to ensure consistent color usage across components.
+
+<table class=pt-table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-primary"></div></td>
+      <td><code>$pt-intent-primary</code></td>
+      <td>Primary intent color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-success"></div></td>
+      <td><code>$pt-intent-success</code></td>
+      <td>Success intent color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-warning"></div></td>
+      <td><code>$pt-intent-warning</code></td>
+      <td>Warning intent color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-intent-danger"></div></td>
+      <td><code>$pt-intent-danger</code></td>
+      <td>Danger intent color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-app-background-color"></div></td>
+      <td><code>$pt-app-background-color</code></td>
+      <td>Application background color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-app-background-color"></div></td>
+      <td><code>$pt-dark-app-background-color</code></td>
+      <td>Dark theme application background color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-text-color"></div></td>
+      <td><code>$pt-text-color</code></td>
+      <td>Default text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-text-color-muted"></div></td>
+      <td><code>$pt-text-color-muted</code></td>
+      <td>Muted text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-text-color-disabled"></div></td>
+      <td><code>$pt-text-color-disabled</code></td>
+      <td>Disabled text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-heading-color"></div></td>
+      <td><code>$pt-heading-color</code></td>
+      <td>Text color for headers</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-link-color"></div></td>
+      <td><code>$pt-link-color</code></td>
+      <td>Text color for links</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-text-color"></div></td>
+      <td><code>$pt-dark-text-color</code></td>
+      <td>Dark theme default text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-text-color-muted"></div></td>
+      <td><code>$pt-dark-text-color-muted</code></td>
+      <td>Dark theme muted text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-text-color-disabled"></div></td>
+      <td><code>$pt-dark-text-color-disabled</code></td>
+      <td>Dark theme disabled text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-heading-color"></div></td>
+      <td><code>$pt-dark-heading-color</code></td>
+      <td>Dark theme text color for headers</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-link-color"></div></td>
+      <td><code>$pt-dark-link-color</code></td>
+      <td>Dark theme text color for links</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-text-selection-color"></div></td>
+      <td><code>$pt-text-selection-color</code></td>
+      <td>Text selection color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color"></div></td>
+      <td><code>$pt-icon-color</code></td>
+      <td>Default icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color-hover"></div></td>
+      <td><code>$pt-icon-color-hover</code></td>
+      <td>Hovered icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color-disabled"></div></td>
+      <td><code>$pt-icon-color-disabled</code></td>
+      <td>Disabled icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-icon-color-selected"></div></td>
+      <td><code>$pt-icon-color-selected</code></td>
+      <td>Selected icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color"></div></td>
+      <td><code>$pt-dark-icon-color</code></td>
+      <td>Dark theme default icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color-hover"></div></td>
+      <td><code>$pt-dark-icon-color-hover</code></td>
+      <td>Dark theme hovered icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color-disabled"></div></td>
+      <td><code>$pt-dark-icon-color-disabled</code></td>
+      <td>Dark theme disabled icon color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-icon-color-selected"></div></td>
+      <td><code>$pt-dark-icon-color-selected</code></td>
+      <td>Dark theme selected icon color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-divider-black"></div></td>
+      <td><code>$pt-divider-black</code></td>
+      <td>Black divider color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-divider-black"></div></td>
+      <td><code>$pt-dark-divider-black</code></td>
+      <td>Dark theme black divider color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-divider-white"></div></td>
+      <td><code>$pt-dark-divider-white</code></td>
+      <td>Dark theme white divider color</td>
+    </tr>
+
+    <tr>
+      <td><div class="docs-color-bubble alias-code-text-color"></div></td>
+      <td><code>$pt-code-text-color</code></td>
+      <td>Code text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-code-background-color"></div></td>
+      <td><code>$pt-code-background-color</code></td>
+      <td>Code background color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-code-text-color"></div></td>
+      <td><code>$pt-dark-code-text-color</code></td>
+      <td>Dark theme code text color</td>
+    </tr>
+    <tr>
+      <td><div class="docs-color-bubble alias-dark-code-background-color"></div></td>
+      <td><code>$pt-dark-code-background-color</code></td>
+      <td>Dark theme code background color</td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide variables.colors
+*/
+/*
+A mixin to generate the classes for a React CSSTransitionGroup which animates any number of CSS
+properties at once.
+
+Transitioned properties are specificed as a map of property names to lists of (inital value, final
+value). For enter & appear transitions, each property will transition from its initial to its final
+value. For leave transitions, each property will transition in reverse, from final to initial.
+
+**Simple example:**
+`@include react-transition("pt-popover", (opacity: 0 1), $before: "&");`
+Transition named "pt-popover" moves opacity from 0 to 1. `"&"` indicates that the
+Transition classes are expected to be applied to this element, where the mixin is invoked.
+
+**Params:**
+$name: React transitionName prop
+$properties: map of CSS property to (initial, final) values
+$duration: transition duration
+$easing: transition easing function
+$delay: transition delay
+$before: selector text to insert before transition name (often to select self: &)
+$after: selector text to insert after transiton name (to select children)
+*/
+/*
+A mixin to generate the classes for one phase of a React CSSTransitionGroup.
+`$phase` must be `appear` or `enter` or `leave`.
+If `enter` phase is given then `appear` phase will be generated at the same time.
+If `leave` phase is given then property values are animated in reverse, from final to initial.
+
+**Example:**
+@include react-transition-phase(pt-toast, enter, $enter-translate, $before: "&");
+@include react-transition-phase(pt-toast, leave, $leave-blur, $pt-transition-duration * 3, $before: "&");
+*/
+/*
+Given map of properties to values, set each property to the value at the given index.
+(remember that sass indices are 1-based).
+
+Example: `each-prop((opacity: 0 1), 2)` will print "opacity: 1"
+*/
+/*
+Format transition class name with all the bits.
+"enter" phase will include "appear" phase in returned name.
+*/
+.App {
+  text-align: center; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.my-overlay {
+  z-index: 21;
+  width: 400px;
+  top: 200px;
+  left: calc(50% - 200px); }
+  .my-overlay.pt-overlay-enter, .my-overlay.pt-overlay-appear {
+    transform: translateY(-50vh) rotate(-10deg); }
+  .my-overlay.pt-overlay-enter-active, .my-overlay.pt-overlay-appear-active {
+    transform: translateY(0) rotate(0deg);
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.54, 1.12, 0.38, 1.11);
+    transition-delay: 0; }
+  .my-overlay.pt-overlay-leave {
+    transform: translateY(0) rotate(0deg); }
+  .my-overlay.pt-overlay-leave-active {
+    transform: translateY(150vh) rotate(-20deg);
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+    transition-delay: 0; }

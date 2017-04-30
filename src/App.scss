@@ -1,0 +1,58 @@
+$icon-font-path: "../node_modules/@blueprintjs/core/resources/icons";
+@import "../node_modules/@blueprintjs/core/dist/blueprint.css";
+@import "../node_modules/@blueprintjs/core/src/common/icons";
+@import "../node_modules/@blueprintjs/core/src/common/react-transition";
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.my-overlay {
+  $enter: (
+    transform: (translateY(-50vh) rotate(-10deg), translateY(0) rotate(0deg))
+  );
+  $leave: (
+    transform: (translateY(150vh) rotate(-20deg), translateY(0) rotate(0deg))
+  );
+
+  @include react-transition-phase(
+    "pt-overlay",
+    "enter",
+    $enter,
+    $pt-transition-duration * 3,
+    $pt-transition-ease-bounce,
+    $before: "&"
+  );
+  @include react-transition-phase(
+    "pt-overlay",
+    "leave",
+    $leave,
+    $pt-transition-duration * 5,
+    $before: "&"
+  );  
+  z-index: 21;
+  width: 400px;
+  top: 200px;
+  left: calc(50% - 200px);
+}
