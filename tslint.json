@@ -19,8 +19,15 @@
         "indent": [ true, "spaces" ],
         "interface-name": [true, "never-prefix"],
         "jsdoc-format": true,
-        "jsx-no-lambda": false,
-        "jsx-no-multiline-js": false,
+        "jsx-alignment": true,
+        "jsx-boolean-value": true,
+        "jsx-curly-spacing": [true, "never"],
+        "jsx-no-bind": true,
+        "jsx-no-lambda": true,
+        "jsx-no-multiline-js": true,
+        "jsx-no-string-ref": true,
+        "jsx-self-close": true,
+        "jsx-wrap-multiline": true,
         "label-position": true,
         "max-line-length": [ true, 120 ],
         "member-ordering": [
@@ -63,10 +70,10 @@
         ],
         "quotemark": [true, "single", "jsx-double"],
         "radix": true,
-        "semicolon": [true, "always"],
+        "semicolon": [true, "never"],
         "switch-default": true,
 
-        "trailing-comma": false,
+        "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
 
         "triple-equals": [ true, "allow-null-check" ],
         "typedef": [

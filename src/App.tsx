@@ -1,40 +1,40 @@
-import * as React from 'react';
-import './App.css';
-import * as classNames from 'classnames';
+import * as React from 'react'
+import './App.css'
+import * as classNames from 'classnames'
 
 import {
   Button,
   Intent,
   Classes,
   Overlay,
-} from '@blueprintjs/core';
+} from '@blueprintjs/core'
 
 type AppState = {
-  isOpen: boolean
-};
+  isOpen: boolean,
+}
 
 class App extends React.Component<{}, AppState> {
   constructor(props: {}) {
-    super(props);
+    super(props)
     this.state = {
       isOpen: false,
-    };
+    }
   }
 
   handleOpen = () => {
-    this.setState({isOpen: true});
+    this.setState({isOpen: true})
   }
 
   handleClose = () => {
-    this.setState({isOpen: false});
+    this.setState({isOpen: false})
   }
 
   render() {
     const classes = classNames(
       Classes.CARD,
       Classes.ELEVATION_4,
-      'my-overlay'
-    );
+      'my-overlay',
+    )
     return (
       <div className="App">
         <Button text="Show Overlay" onClick={this.handleOpen} />
@@ -48,7 +48,6 @@ class App extends React.Component<{}, AppState> {
           canOutsideClickClose={true}
           enforceFocus={true}
         >
-
           <div className={classes}>
             <h3>I'm an overlay!</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -60,8 +59,8 @@ class App extends React.Component<{}, AppState> {
           </div>
         </Overlay>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
