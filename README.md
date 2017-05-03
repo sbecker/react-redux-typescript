@@ -1,3 +1,74 @@
+# React-Redux-TypeScript
+
+This app structure was initially created with [create-react-app-typescript]https://github.com/wmonk/create-react-app-typescript.
+
+Idea is to get fully working react/typescript app with minimal manual configuration. Of course, there is some:
+
+- Adds [blueprint](http://blueprintjs.com/) for hifi components
+- Adds command for generating test coverage `test:coverage` - generates a `coverage` folder
+- Adds [tslint](https://github.com/palantir/tslint) for linting and enforcing rules
+- Adds `redux`, and example of typed store, components, actions, reducers
+
+## References
+
+### Tutorials
+
+- https://rjzaworski.com/2016/08/getting-started-with-redux-and-typescript
+- https://rjzaworski.com/2016/08/typescript-redux-and-react
+- https://rjzaworski.com/2016/09/typescript-redux-async-actions
+- https://rjzaworski.com/2016/12/testing-typescript-with-jest
+- https://rjzaworski.com/2017/01/typescript-redux-thunk
+
+- https://daveceddia.com/snapshot-testing-react-with-jest/
+- https://github.com/reactjs/redux/blob/master/docs/recipes/WritingTests.md
+
+### Code
+- https://github.com/wmonk/create-react-app-typescript
+- https://github.com/rjz/typescript-react-redux
+- https://github.com/jupl/astraea ( A boilerplate )
+
+### Linting
+- https://github.com/palantir/tslint
+- https://github.com/palantir/tslint-react
+- https://github.com/jonaskello/tslint-immutable
+- https://www.npmjs.com/package/tslint-eslint-rules
+
+### TypeChecked Immutability in TypeScript
+
+- `const` for variables
+
+```
+const a = 3
+b = 4 // error
+```
+
+- `readonly` for object properties
+
+```
+interface Point {
+    readonly x: number;
+    readonly y: number;
+}
+
+let p1: Point = { x: 10, y: 20 };
+p1.x = 5; // error!
+```
+
+- `ReadonlyArray<T>` for arrays
+
+```
+let a: number[] = [1, 2, 3, 4];
+let ro: ReadonlyArray<number> = a;
+ro[0] = 12; // error!
+ro.push(5); // error!
+ro.length = 100; // error!
+a = ro; // error!
+```
+
+
+
+# Create React App Docs
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
